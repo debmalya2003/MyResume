@@ -1,0 +1,279 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+\photoR{2.5cm}{Image} % Specify your image here
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Debmalya Mukherjee}
+\tagline{WEB DEVELOPER}
+%% You can add multiple photos on the left or right
+
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{debmalyamukherjee660@gmail.com}
+  \phone{+91 8697457403}
+  \location{Kolkata, INDIA}
+  \linkedin{DebmalyaMukherjee}
+  \github{debmalya2003}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Networking Virtual Internship}{Juniper}{January 2024 - March 2024}{}
+
+Engaged in a virtual internship program facilitated by Juniper and AICTE EduSkills, mastering Cloud and Networking concepts. Gained proficiency in DNS, VPN, VLAN, and firewall configuration.
+
+
+\divider
+
+\cvevent{Forage}{JP Morgan}{March 2023 - April 2023}{}
+
+Implemented JPMorgan Chase frameworks and tools to optimize data processing efficiency, leading to 30 times increase in data analysis speed for traders.
+
+\divider
+
+\cvevent{Flipkart Grid}{Flipkart}{August 2023 - October 2023}{}
+
+Proficiently concluded phases 5.1 and 5.2 of the Software Development Track hosted by Flipkart,which comprised questions related to coding and general aptitude.
+
+\cvsection{Projects}
+
+\cvevent{My Portfolio}{Created my own 3D-Portfolio using Three JS and Tailwind}{}{}
+\begin{itemize}
+\item \href{https://github.com/debmalya2003/3D_portfolio}{Github Link}
+\end{itemize}
+
+\divider
+
+\cvevent{Rock-Paper-Scissors}{An interactive game of rock-paper-scissors played against an AI}{}{}
+\begin{itemize}
+\item \href{https://github.com/debmalya2003/RockPaperScissors.github.io}{Github Link}
+\end{itemize}
+
+\divider
+
+\cvevent{Quiz App}{Test your knowledge of various fields via Quiz-Webpage}{}{}
+\begin{itemize}
+\item \href{https://github.com/debmalya2003/Quiz-App}{Github Link}
+\end{itemize}
+
+\divider
+
+\cvevent{Resume Builder}{Build your own customizable resume within minutes}{}{}
+\begin{itemize}
+\item \href{https://github.com/debmalya2003/Resume-Builder}{Github Link}
+\end{itemize}
+
+\divider
+
+\cvevent{Typing Test}{Check to improve your typing speed and accuracy in some simple steps}{}{}
+\begin{itemize}
+\item \href{https://github.com/debmalya2003/TypingTest.github.io}{Github Link}
+\end{itemize}
+
+\medskip
+
+
+
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Education}
+
+\cvevent{ICSE 10th Standard}{\faMapMarker\ Kolkata, Vivekananda Mission School}{April 2018 -- March 2019}{}
+Attained a score of 94.2%.
+
+
+\divider
+
+\cvevent{ICSE 12th Standard}{\faMapMarker\ Kolkata, Vivekananda Mission School}{May 2019 -- March 2021}{}
+Achieved a result of 93.3%.
+
+
+\divider
+
+\cvevent{B.Tech CSE}{\faMapMarker\ Bhubaneshwar, KIIT DU}{August 2021 -- May 2025}{}
+Obtained a CGPA of 8.87
+
+\cvsection{Languages}
+
+\cvskill{C}{5}
+\divider
+
+\cvskill{C++}{5}
+\divider
+
+\cvskill{Java}{4.5}
+\divider
+
+\cvskill{HTML,CSS}{5}
+\divider
+
+\cvskill{JavaScript}{4.5}
+\divider
+
+\cvskill{Node}{4.5}
+\divider
+
+\cvskill{React JS}{4.5}
+\divider
+
+\cvskill{MongoDB}{4}
+\divider
+
+\cvskill{SQL}{3.5}
+\divider
+
+\cvskill{Next JS}{4}
+\divider
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+\cvsection{Extra Curricular}
+
+\cvevent{ServiceNow\ NowLearning}{Service Now}{December 2023 - January 2024}{}
+Successfully completed the ServiceNow exam\break
+Micro-Certification - Welcome to ServiceNow
+
+
+
+
+% \divider
+
+
+
+
+\end{paracol}
+
+
+\end{document}
